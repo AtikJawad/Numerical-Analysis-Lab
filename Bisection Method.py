@@ -14,9 +14,8 @@ def bisection_method(func_str, a, b, tolerance):
     
     def f(x):
         return eval(func_str)
-    
-    # Check if f(a) and f(b) have opposite signs
-    if f(a) * f(b) >= 0:
+      
+    if f(a) * f(b) >= 0: 
         print("Error: f(a) and f(b) must have opposite signs.")
         return None
 
@@ -24,16 +23,19 @@ def bisection_method(func_str, a, b, tolerance):
         c = (a + b) / 2  # Midpoint
 
         if f(c) == 0:
-            return c  # Found exact root
+            return c  # exact root
 
         if f(a) * f(c) > 0:
             a = c
         else:
             b = c
 
-    # Midpoint is our best approximation
-    return (a + b) / 2
+    return (a + b) / 2   # Midpoint is the best approximation
 
+func= input("Enter any equation using variable 'x' only e.g.(x**3 - x - 2) : ")
+a= float(input("Enter lower bound: "))
+b=float(input("Enter upper bound: "))
+tolerance=float(input("Enter Tolerance (desired_accuracy): "))
 
-func= input("Enter any equation using variable 'x' only e.g.(x**3 - x - 2)")
-interval=
+root = bisection_method(func,a,b,tolerance)
+print(f"\nRoot = {root}")
