@@ -28,8 +28,9 @@ y = eval(func)  # original f(x)
 plt.plot(x, y)
 plt.axhline(0, color='black')
 plt.axvline(0, color='black')
+plt.scatter(root, 0, color='red')  # root
 plt.xlabel('x')
 plt.ylabel('f(x)')
-plt.scatter(root, 0, color='red')  # root
+plt.grid(True)
 plt.title(f"Fixed Point Iteration: g(x) = {func}")
 plt.show()
